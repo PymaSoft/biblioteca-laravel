@@ -132,8 +132,11 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
+                                @guest
+                                    <a href="{{route('login')}}" class="btn btn-default btn-flat">Iniciar sesión</a>
+                                @endguest
                                 {{-- <a href="#" class="btn btn-default btn-flat">Profile</a> --}}
-                                <a href="{{route('login')}}" class="btn btn-default btn-flat">Iniciar sesión</a>
+                                
                             </div>
                             <div class="pull-right">
                                 {{-- <a href="#" class="btn btn-default btn-flat">Sign out</a> --}}

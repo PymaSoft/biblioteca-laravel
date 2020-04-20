@@ -33,6 +33,11 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Inicia tú sesión</p>
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+      {{ session('status') }}
+    </div>
+    @endif
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -54,12 +59,14 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-
+        <div class="col-xs-5">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
         </div>
         <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+        <div class="col-xs-5">
+          @if (Route::has('password.request'))
+            <a href="{{ route('password.request') }}" class="btn btn-link">{{ __('Forgot Your Password?') }}</a>              
+          @endif
         </div>
         <!-- /.col -->
       </div>

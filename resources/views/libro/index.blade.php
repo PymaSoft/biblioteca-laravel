@@ -27,6 +27,8 @@
                         <tr>
                             <th class="width20">ID</th>
                             <th>Título</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
                             <th>Cantidad</th>
                             <th class="width80"></th>
                         </tr>
@@ -36,7 +38,9 @@
                         <tr>
                             <td>{{$data->id}}</td>
                             <td><a href="{{route('ver_libro', $data)}}" class="ver-libro">{{$data->titulo}}</a></td>
-                            <td>{{$data->cantidad}}</td>
+                            <td>{{$data->autor}}</td>
+                            <td>{{$data->editorial}}</td>
+                            <td align="center">{{$data->cantidad}}</td>
                             <td>
                                 <a href="{{route('editar_libro', ['id' => $data->id])}}" class="btn-accion-tabla tooltipsC" title="Editar este registro">
                                     <i class="fa fa-edit"></i>
