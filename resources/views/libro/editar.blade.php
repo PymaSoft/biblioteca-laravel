@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-Libros
+    Libros
 @endsection
 
 @section("styles")

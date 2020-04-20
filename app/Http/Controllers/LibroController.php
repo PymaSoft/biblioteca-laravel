@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidacionLibro;
 use Illuminate\Http\Request;
 use App\Models\Libro;
+use Illuminate\Support\Facades\Storage;
+
 // use Illuminate\Support\Facades\Cache;
 
 
@@ -33,25 +36,48 @@ class LibroController extends Controller
         // dd($request->all());
         if ($foto = Libro::setCaratula($request->foto_up))
             $request->request->add(['foto' => $foto]);
+            // dd($request->all());
+            Libro::create($request->all());
+            return redirect()->route('libro')->with('mensaje', 'El libro se creó correctamente');
     }
 
-    public function ver($id)
+    public function ver(Request $request, Libro $libro)
     {
-        //
+        // dd($libro);
+        if ($request->ajax()) {
+            return view('libro.ver', compact('libro'));
+        } else {
+            abort(404);
+        }
     }
 
     public function editar($id)
     {
-        //
+        $data = Libro::findOrFail($id);
+        return view('libro.editar', compact('data'));
     }
 
     public function actualizar(Request $request, $id)
     {
-        //
+        $libro = Libro::findOrFail($id);
+        if ($foto = Libro::setCaratula($request->foto_up, $libro->foto))
+            $request->request->add(['foto' => $foto]);
+        $libro->update($request->all());
+        return redirect()->route('libro')->with('mensaje', 'El libro se actualizó correctamente');
     }
 
-    public function eliminar($id)
+    public function eliminar(Request $request, $id)
     {
-        //
+        if ($request->ajax()) {
+            $libro = Libro::findOrFail($id);
+            if (Libro::destroy($id)) {
+                Storage::disk('public')->delete("imagenes/caratulas/$libro->foto");
+                return response()->json(['mensaje' => 'ok']);
+            } else {
+                return response()->json(['mensaje' => 'ng']);
+            }
+        } else {
+            abort(404);
+        }
     }
 }

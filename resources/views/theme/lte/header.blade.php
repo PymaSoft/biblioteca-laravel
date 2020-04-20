@@ -2,15 +2,15 @@
     <!-- Logo -->
     <a href="/" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>P</b>Sf</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><b>Pyma</b>Soft</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Barra de Navegación</span>
         </a>
 
         <div class="navbar-custom-menu">
@@ -22,7 +22,7 @@
                         <span class="label label-success">4</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 4 messages</li>
+                        <li class="header">Tienes 4 mensajes</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
@@ -30,20 +30,20 @@
                                     <!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="{{ asset("assets/$theme/dist/img/user2-160x160.jpg") }}" class="img-circle"
+                                            <img src="{{ asset("assets/$theme/dist/img/user9-160x160.jpg") }}" class="img-circle"
                                                 alt="User Image">
                                         </div>
                                         <h4>
-                                            Support Team
+                                            Equipo de apoyo
                                             <small><i class="fa fa-clock-o"></i> 5 mins</small>
                                         </h4>
-                                        <p>Why not buy a new awesome theme?</p>
+                                        <p>Por qué no comprar un nuevo tema increíble?</p>
                                     </a>
                                 </li>
                                 <!-- end message -->
                             </ul>
                         </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
+                        <li class="footer"><a href="#">Ver todos los mensajes</a></li>
                     </ul>
                 </li>
                 <!-- Notifications: style can be found in dropdown.less -->
@@ -53,18 +53,18 @@
                         <span class="label label-warning">10</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 10 notifications</li>
+                        <li class="header">Tienes 10 notificaciones</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                        <i class="fa fa-users text-aqua"></i> 5 nuevos miembros se unieron hoy
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="footer"><a href="#">View all</a></li>
+                        <li class="footer"><a href="#">Ver todo</a></li>
                     </ul>
                 </li>
                 <!-- Tasks: style can be found in dropdown.less -->
@@ -74,7 +74,7 @@
                         <span class="label label-danger">9</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 9 tasks</li>
+                        <li class="header">Tienes 9 tareas</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
@@ -82,7 +82,7 @@
                                     <!-- Task item -->
                                     <a href="#">
                                         <h3>
-                                            Design some buttons
+                                            Diseña algunos botones
                                             <small class="pull-right">20%</small>
                                         </h3>
                                         <div class="progress xs">
@@ -98,25 +98,25 @@
                             </ul>
                         </li>
                         <li class="footer">
-                            <a href="#">View all tasks</a>
+                            <a href="#">Ver todas las tareas</a>
                         </li>
                     </ul>
                 </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ asset("assets/$theme/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image">
-                        {{-- <span class="hidden-xs">Alexander Pierce</span> --}}
+                        <img src="{{ asset("assets/$theme/dist/img/user9-160x160.jpg") }}" class="user-image" alt="User Image">
+                        {{-- <span class="hidden-xs">Pedro J. Cruz G.</span> --}}
                         <span class="hidden-xs">Hola, {{session()->get('nombre_usuario') ?? 'Invitado'}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{ asset("assets/$theme/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
+                            <img src="{{ asset("assets/$theme/dist/img/user9-160x160.jpg") }}" class="img-circle" alt="User Image">
 
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                Pedro J. Cruz G. - Web Developer
+                                <small>Miembro desde Feb. 2019</small>
                             </p>
                         </li>
                         <!-- Menu Body -->

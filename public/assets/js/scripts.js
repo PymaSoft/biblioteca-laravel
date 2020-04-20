@@ -30,7 +30,7 @@ $(document).ready(function () {
         event.preventDefault();
         const data = {
             rol_id: $(this).data('rolid'),
-            rol_nombre: $(this).data('rolnombre'),
+             rol_nombre: $(this).data('rolnombre'),
             _token: $('input[name=_token]').val()
         }
         ajaxRequest(data, '/ajax-sesion', 'asignar-rol');

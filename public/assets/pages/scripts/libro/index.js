@@ -37,7 +37,7 @@ $(document).ready(function () {
                         form.parents('tr').remove();
                         Biblioteca.notificaciones('El registro fue eliminado correctamente', 'Biblioteca', 'success');
                     } else {
-                        Biblioteca.notificaciones('El registro no pudo ser eliminado, hay recursos usandolo', 'Biblioteca', 'error');
+                        Biblioteca.notificaciones('El registro no pudo ser eliminado, hay recursos usándolo', 'Biblioteca', 'error');
                     }
                 } else if (funcion == 'verLibro') {
                     $('#modal-ver-libro .modal-body').html(respuesta)

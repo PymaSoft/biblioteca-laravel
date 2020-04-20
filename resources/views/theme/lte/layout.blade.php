@@ -20,9 +20,9 @@
     {{-- <link rel="stylesheet" href="{{ asset("assets/$theme/dist/css/skins/toastr.min.css") }}"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     @yield('styles')
-    
+
     <link rel="stylesheet" href="{{ asset("assets/css/custom.css") }}">
-    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,28 +50,32 @@
         <!-- Inicio Footer -->
         @include("theme/$theme/footer")
         <<!--Inicio de ventana modal para login con más de un rol -->
-		@if(session()->get("roles") && count(session()->get("roles")) > 1)
+            @if(session()->get("roles") && count(session()->get("roles")) > 1)
             @csrf
-            <div class="modal fade" id="modal-seleccionar-rol" data-rol-set="{{empty(session()->get("rol_id")) ? 'NO' : 'SI'}}" tabindex="-1" data-backdrop="static" data-keyboard="false">
+            <div class="modal fade" id="modal-seleccionar-rol"
+                data-rol-set="{{empty(session()->get("rol_id")) ? 'NO' : 'SI'}}" tabindex="-1" data-backdrop="static"
+                data-keyboard="false">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Roles de Usuario</h4>
                         </div>
                         <div class="modal-body">
-                            <p>Cuentas con mas de un Rol en la plataforma, a continuación seleccione con cual de ellos desea trabajar</p>
+                            <p>Cuentas con mas de un Rol en la plataforma, a continuación seleccione con cual de ellos
+                                desea trabajar</p>
                             @foreach(session()->get("roles") as $key => $rol)
-                                <li>
-                                    <a href="#" class="asignar-rol" data-rolid="{{$rol['id']}}" data-rolnombre="{{$rol["nombre"]}}">
-                                        {{$rol["nombre"]}}
-                                    </a>
-                                </li>
+                            <li>
+                                <a href="#" class="asignar-rol" data-rolid="{{$rol['id']}}"
+                                    data-rolnombre="{{$rol["nombre"]}}">
+                                    {{$rol["nombre"]}}
+                                </a>
+                            </li>
                             @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-        @endif
+            @endif
     </div>
     <!-- jQuery 3 -->
     <script src="{{ asset("assets/$theme/bower_components/jquery/dist/jquery.min.js") }}"></script>
@@ -83,7 +87,7 @@
     <script src="{{ asset("assets/$theme/bower_components/fastclick/lib/fastclick.js") }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset("assets/$theme/dist/js/adminlte.min.js") }}"></script>
-    <!-- AdminLTE for demo purposes --> 
+    <!-- AdminLTE for demo purposes -->
     @yield('scriptsPlugins')
     <script src="{{asset("assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
     <script src="{{asset("assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
