@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioAdministradorSeeder extends Seeder
 {
@@ -22,7 +23,8 @@ class UsuarioAdministradorSeeder extends Seeder
             'usuario' => 'admin',
             'nombre' => 'Administrador',
             'email' => 'pedroincora@gmail.com',
-            'password' => bcrypt('pyma2012')
+            'password' => bcrypt('pyma2012'),
+            'password' => Hash::make('pyma2012')
         ]);
 
         DB::table('usuario_rol')->insert([

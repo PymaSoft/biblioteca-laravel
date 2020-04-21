@@ -23,7 +23,7 @@ class LibroPrestamoController extends Controller
     {
         $libros = Libro::withCount(['prestamo'  => function (Builder $query) {
             $query->whereNull('fecha_devolucion');
-        }])->get()->filter(function($item, $key){
+        }])->get()->filter(function ($item, $key){
             return $item->cantidad > $item->prestamo_count;
         })->pluck('titulo', 'id');
         // dd($libros);
@@ -42,9 +42,16 @@ class LibroPrestamoController extends Controller
         return redirect()->route('libro-prestamo')->with('mensaje', 'El libro prestado se registró');
     }
 
-    public function show($id)
+    public function devolucion(Request $request, $libro_id)
     {
-        //
+        if ($request->ajax()) {
+            LibroPrestamo::where('libro_id', $libro_id)
+            ->whereNull('fecha_devolucion')
+            ->update(['fecha_devolucion' => date('Y-m-d')]);
+            return response()->json(['fecha_devolucion' => date('Y-m-d')]);
+        } else {
+            abort(404);
+        }
     }
 
     public function editar($id)

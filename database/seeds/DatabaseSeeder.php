@@ -8,18 +8,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->truncateTablas([
-            'rol',
-            'permiso',
             'menu',
+            'permiso',
+            'rol',
             'menu_rol',
             'permiso_rol',
             'usuario',
             'usuario_rol'            
         ]);
         $this->call(TablaRolSeeder::class);
-        $this->call(TablaPermisoSeeder::class);
         $this->call(TablaMenuSeeder::class);
         $this->call(TablaMenuRolSeeder::class);
+        $this->call(TablaPermisoSeeder::class);
         $this->call(TablaPermisoRolSeeder::class);
         $this->call(UsuarioAdministradorSeeder::class); 
     }

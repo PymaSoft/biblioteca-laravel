@@ -9,6 +9,7 @@ class TablaPermisoSeeder extends Seeder
     /* factory(Permiso::::class)->times(50)->create();             // Creará 50 items, lo de abajo no irá nada */
     public function run()
     {
+        // factory(Permiso::class)->times(50)->create();
         $now = Carbon::now()->toDateTimeString();
         $permisos = [
             array('id' => '1', 'nombre' => 'Crear libro', 'slug' => 'crear-libro', 'created_at' => $now, 'updated_at' => $now),
