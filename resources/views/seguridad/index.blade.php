@@ -34,9 +34,9 @@
   <div class="login-box-body">
     <p class="login-box-msg">Inicia tú sesión</p>
     @if (session('status'))
-    <div class="alert alert-success" role="alert">
-      {{ session('status') }}
-    </div>
+      <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+      </div>
     @endif
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible">

@@ -1,10 +1,13 @@
+@php
+use Carbon\Carbon;
+@endphp
 <header class="main-header">
     <!-- Logo -->
     <a href="/" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>P</b>Sf</span>
+        <span class="logo-mini"><b>B</b>LT</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Pyma</b>Soft</span>
+        <span class="logo-lg"><b>Biblioteca</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -115,8 +118,10 @@
                             <img src="{{ asset("assets/$theme/dist/img/user9-160x160.jpg") }}" class="img-circle" alt="User Image">
 
                             <p>
-                                Pedro J. Cruz G. - Web Developer
-                                <small>Miembro desde Feb. 2019</small>
+                                {{session()->get('nombre_usuario', 'Invitado')}} - {{session()->get('rol_nombre', 'Guest')}}
+                                @auth
+                                    <small>Registrado desde {{Carbon::parse(auth()->user()->created_at)->year }}</small>
+                                @endauth
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -146,9 +151,9 @@
                     </ul>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
-                <li>
+                {{-- <li>
                     <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </nav>

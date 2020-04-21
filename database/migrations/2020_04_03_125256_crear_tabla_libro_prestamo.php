@@ -16,7 +16,7 @@ class CrearTablaLibroPrestamo extends Migration
             $table->foreign('libro_id', 'fk_libroprestamo_libro')->references('id')->on('libro')->onDelete('restrict')->onUpdate('restrict');
             $table->date('fecha_prestamo');
             $table->string('prestado_a', 100);
-            $table->boolean('estado')->default(1);
+            // $table->boolean('estado')->default(1);
             $table->date('fecha_devolucion')->nullable();
             $table->timestamps();
             $table->charset = 'utf8mb4';

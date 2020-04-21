@@ -8,8 +8,8 @@
                 <img src="{{ asset("assets/$theme/dist/img/user9-160x160.jpg") }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Pedro J. Cruz G.</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> En línea</a>
+                <p>{{session()->get('nombre_usuario', 'Invitado')}}</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
         <!-- search form -->

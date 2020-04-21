@@ -20,8 +20,8 @@
 @section('contenido')
 <div class="row">
     <div class="col-lg-12">
-        @include('includes.form-error')
         @include('includes.mensaje')
+        @include('includes.form-error')
         <div class="card card-danger">
             <div class="card-header">
                 <h3 class="card-title">Crear Libro</h3>

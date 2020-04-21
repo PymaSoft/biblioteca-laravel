@@ -1,6 +1,6 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-Libros Prestados
+    Libros Prestados
 @endsection
 
 @section("scripts")
@@ -29,7 +29,7 @@ Libros Prestados
                             <th>Título</th>
                             <th>Prestado por</th>
                             <th>Prestado a</th>
-                            <th>Fecha prestamo</th>
+                            <th>Fecha préstamo</th>
                             <th>Fecha devolución</th>
                             <th class="width80"></th>
                         </tr>

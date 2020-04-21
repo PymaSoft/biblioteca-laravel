@@ -31,7 +31,7 @@ class LibroController extends Controller
         return view('libro.crear');
     }
 
-    public function guardar(Request $request)
+    public function guardar(ValidacionLibro $request)
     {
         // dd($request->all());
         if ($foto = Libro::setCaratula($request->foto_up))
@@ -57,7 +57,7 @@ class LibroController extends Controller
         return view('libro.editar', compact('data'));
     }
 
-    public function actualizar(Request $request, $id)
+    public function actualizar(ValidacionLibro $request, $id)
     {
         $libro = Libro::findOrFail($id);
         if ($foto = Libro::setCaratula($request->foto_up, $libro->foto))
