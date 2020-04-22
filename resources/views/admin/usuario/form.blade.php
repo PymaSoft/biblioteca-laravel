@@ -1,17 +1,17 @@
-<div class="form-group">
-    <label for="nombre" class="col-lg-3 control-label requerido">Nombre</label>
+<div class="form-group row">
+    <label for="nombre" class="col-lg-3 col-form-label requerido">Nombre</label>
     <div class="col-lg-8">
         <input type="text" name="nombre" id="nombre" class="form-control" value="{{old('nombre', $data->nombre ?? '')}}" required />
     </div>
 </div>
-<div class="form-group">
-    <label for="usuario" class="col-lg-3 control-label requerido">Usuario</label>
+<div class="form-group row">
+    <label for="usuario" class="col-lg-3 col-form-label requerido">Usuario</label>
     <div class="col-lg-8">
         <input type="text" name="usuario" id="usuario" class="form-control" value="{{old('usuario', $data->usuario ?? '')}}" required />
     </div>
 </div>
-<div class="form-group">
-    <label for="email" class="col-lg-3 control-label requerido">E-Mail</label>
+<div class="form-group row">
+    <label for="email" class="col-lg-3 col-form-label requerido">E-Mail</label>
     <div class="col-lg-8">
         <input type="email" name="email" id="email" class="form-control" value="{{old('email', $data->email ?? '')}}" required/>
     </div>
@@ -27,8 +27,8 @@
     <div class="col-lg-8">
         <input type="password" name="re_password" id="re_password" class="form-control" value="" {{!isset($data) ? 'required' : ''}} minlength="5"/>
     </div>
-<div class="form-group">
-    <label for="rol_id" class="col-lg-3 control-label requerido">Rol</label>
+<div class="form-group row">
+    <label for="rol_id" class="col-lg-3 col-form-label requerido">Rol</label>
     <div class="col-lg-8">
         <select name="rol_id[]" id="rol_id" class="form-control" multiple required>
             <option value="">Seleccione el rol</option>
